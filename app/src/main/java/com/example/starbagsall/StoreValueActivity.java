@@ -18,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class StoreValueActivity extends AppCompatActivity {
 
     EditText handdleET, dCutET, wCutET, gsm40ET, gsm50ET, gsm60ET, gsm70ET, gsm80ET;
-    EditText autoSealingET, netSwingET, noColorET, color1ET, color2ET, color3ET, color4ET, screenPrintET;
+    EditText autoSealingET, netSwingET, noColorET, color1ET, color2ET, color3ET, color4ET, screenPrintET,profitET;
 
     Button saveBtn,updateBtn;
 
@@ -47,6 +47,7 @@ public class StoreValueActivity extends AppCompatActivity {
         color3ET = findViewById(R.id.color3ET);
         color4ET = findViewById(R.id.color4ET);
         screenPrintET = findViewById(R.id.screenPrintET);
+        profitET = findViewById(R.id.profitET);
         saveBtn = findViewById(R.id.saveBtn);
         updateBtn = findViewById(R.id.updateBtn);
 
@@ -80,6 +81,7 @@ public class StoreValueActivity extends AppCompatActivity {
                     color3ET.setText(String.valueOf(dataPojo.getColor3Value()));
                     color4ET.setText(String.valueOf(dataPojo.getColor4Value()));
                     screenPrintET.setText(String.valueOf(dataPojo.getScreenPrint()));
+                    profitET.setText(String.valueOf(dataPojo.getProfitValue()));
                 }
             }
         }
@@ -104,6 +106,7 @@ public class StoreValueActivity extends AppCompatActivity {
                 String color3Value = color3ET.getText().toString();
                 String color4Value = color4ET.getText().toString();
                 String screenPrint = screenPrintET.getText().toString();
+                String profit = profitET.getText().toString();
 
 
 
@@ -135,7 +138,8 @@ public class StoreValueActivity extends AppCompatActivity {
                             Double.parseDouble(color2Value),
                             Double.parseDouble(color3Value),
                             Double.parseDouble(color4Value),
-                            Double.parseDouble(screenPrint)
+                            Double.parseDouble(screenPrint),
+                            Double.parseDouble(profit)
                     );
 
 
@@ -181,8 +185,7 @@ public class StoreValueActivity extends AppCompatActivity {
                 String color3Value = color3ET.getText().toString();
                 String color4Value = color4ET.getText().toString();
                 String screenPrint = screenPrintET.getText().toString();
-
-
+                String profit = profitET.getText().toString();
 
 
                 DataPojo dataPojo = new DataPojo(1,Double.parseDouble(handleValue),
@@ -200,7 +203,8 @@ public class StoreValueActivity extends AppCompatActivity {
                         Double.parseDouble(color2Value),
                         Double.parseDouble(color3Value),
                         Double.parseDouble(color4Value),
-                        Double.parseDouble(screenPrint)
+                        Double.parseDouble(screenPrint),
+                        Double.parseDouble(profit)
                 );
 
                 int update = StarDatabase.getInstance(StoreValueActivity.this).getStarBagDao().updateValue(dataPojo);

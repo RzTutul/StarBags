@@ -19,34 +19,34 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="10dp">
+
             <EditText
-                android:id="@+id/weightET"
+                android:id="@+id/widthET"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/boder_edittext"
                 android:hint="Width"
-                android:paddingLeft="15dp"
                 android:inputType="number"
-                />
+                android:paddingLeft="15dp" />
 
             <EditText
                 android:id="@+id/heightET"
-                android:inputType="number"
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/boder_edittext"
                 android:hint="Height"
+                android:inputType="number"
                 android:paddingLeft="15dp" />
 
             <EditText
                 android:id="@+id/guessetET"
-                android:inputType="number"
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/boder_edittext"
                 android:hint="Gusset"
+                android:inputType="number"
                 android:paddingLeft="15dp" />
 
             <TextView
@@ -112,12 +112,12 @@
 
             <EditText
                 android:id="@+id/qytET"
-                android:inputType="number"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/boder_edittext"
                 android:hint="Qyt"
+                android:inputType="number"
                 android:paddingLeft="15dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -127,8 +127,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Caculate"
-                app:cornerRadius="10dp"
-                />
+                app:cornerRadius="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -155,15 +154,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="Weight: "
+                        android:text="Width: "
                         android:textColor="#000"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/weightTV"
+                        android:id="@+id/widthTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="0"
                         android:textColor="@android:color/holo_red_dark"
@@ -213,13 +212,14 @@
                         android:id="@+id/gussetTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
+                        android:layout_marginLeft="2dp"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="0"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -234,20 +234,18 @@
                         android:textSize="18sp" />
 
 
-                <TextView
+                    <TextView
 
-                    android:id="@+id/QytTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:text="0"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="15sp" />
+                        android:id="@+id/QytTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="0"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -268,20 +266,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="bag -"
+                        android:text="bag"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/bagValueTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="0"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="15sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -303,17 +290,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="Gsm -"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/gsmValueTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="0"
+                        android:text="Gsm"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp" />
 
@@ -338,19 +315,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="Swing -"
+                        android:text="Swing"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/swingValueTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="0"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -373,47 +341,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="color -"
+                        android:text="color"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/printValueTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="0"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="15sp" />
-
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="Profit: "
-                        android:textColor="#000"
-                        android:textSize="18sp" />
-
-
-                    <TextView
-                        android:id="@+id/profitTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="0.60"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
 
 
             </LinearLayout>
@@ -426,7 +358,6 @@
 
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -434,20 +365,46 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="Result : "
+                        android:text="Price : "
                         android:textColor="#000"
                         android:textSize="20sp" />
 
 
                     <TextView
-                        android:id="@+id/resultTV"
+                        android:id="@+id/priceTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="0"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="Total Price : "
+                        android:textColor="#000"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/totalPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -459,7 +416,6 @@
 
 
             </LinearLayout>
-
 
 
         </LinearLayout>

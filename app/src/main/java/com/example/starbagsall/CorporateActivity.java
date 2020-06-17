@@ -21,15 +21,18 @@ import com.example.starbagsall.db.StarDatabase;
 import com.example.starbagsall.entites.DataPojo;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.text.DecimalFormat;
+
 public class CorporateActivity extends AppCompatActivity {
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
 
     String bagType[] = {"Select Bag", "Handle", "D-Cut", "W-Cut"};
-    String gsm[] = {"Select gsm","gsm", "50gsm", "60gsm", "70gsm", "80gsm"};
+    String gsm[] = {"Select gsm","40gsm", "50gsm", "60gsm", "70gsm", "80gsm"};
     String swingtype[] = {"Select Swing", "Auto/Heat Sealing", "Net Swing"};
     String print[] = {"Select Color", "No color", "1 color", "2 color", "3 color", "4 color", "Screen Color"};
 
     Button calculateBtn;
-    EditText weightET, heightET, guessetET,qytET;
+    EditText widthET, heightET, guessetET,qytET;
 
 
     double bagValue, gsmValue, swingValue, printValue;
@@ -53,7 +56,7 @@ public class CorporateActivity extends AppCompatActivity {
         printSP = findViewById(R.id.printSP);
         calculateBtn = findViewById(R.id.calculateBtn);
         heightET = findViewById(R.id.heightET);
-        weightET = findViewById(R.id.weightET);
+        widthET = findViewById(R.id.widthET);
         guessetET = findViewById(R.id.guessetET);
         qytET = findViewById(R.id.qytET);
 
@@ -73,13 +76,13 @@ public class CorporateActivity extends AppCompatActivity {
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String weight = weightET.getText().toString();
+                String width = widthET.getText().toString();
                 String height = heightET.getText().toString();
                 String guesset = guessetET.getText().toString();
                 String qyt = qytET.getText().toString();
 
-                if (weight.isEmpty()) {
-                    weightET.setError("Enter Weigh!");
+                if (width.isEmpty()) {
+                    widthET.setError("Enter Weigh!");
                 } else if (height.isEmpty()) {
                     heightET.setError("Enter Heigh!");
                 } else if (guesset.isEmpty()) {
@@ -117,44 +120,38 @@ public class CorporateActivity extends AppCompatActivity {
 
                 else
                 {
-                    TextView weightTV =findViewById(R.id.weightTV);
+                    TextView widthTV =findViewById(R.id.widthTV);
                     TextView heightTV = findViewById(R.id.heightTV);
                     TextView gussetTV = findViewById(R.id.gussetTV);
-                    TextView bagTV = findViewById(R.id.bagTV);
-                    TextView bagValueTV = findViewById(R.id.bagValueTV);
-                    TextView gsmTV = findViewById(R.id.gsmTV);
-                    TextView gsmValueTV = findViewById(R.id.gsmValueTV);
-                    TextView swingTV = findViewById(R.id.swingTV);
-                    TextView swingValueTV = findViewById(R.id.swingValueTV);
-                    TextView printTV = findViewById(R.id.printTV);
-                    TextView printValueTV = findViewById(R.id.printValueTV);
                     TextView qytValueTV = findViewById(R.id.QytTV);
-                    TextView resultTV = findViewById(R.id.resultTV);
+                    TextView priceTV = findViewById(R.id.priceTV);
+                    TextView totalPriceTV = findViewById(R.id.totalPrice);
+                    TextView bagTV = findViewById(R.id.bagTV);
+                    TextView gsmTV = findViewById(R.id.gsmTV);
+                    TextView swingTV = findViewById(R.id.swingTV);
+                    TextView printTV = findViewById(R.id.printTV);
 
-                    weightTV.setText(weight);
+                    widthTV.setText(width);
                     heightTV.setText(height);
                     gussetTV.setText(guesset);
-                    bagTV.setText(selectBag);
-                    bagValueTV.setText(String.valueOf(bagValue));
-                    gsmTV.setText(selectgsm);
-                    gsmValueTV.setText(String.valueOf(gsmValue));
-                    swingTV.setText(selectSwing);
-                    swingValueTV.setText(String.valueOf(swingValue));
-                    printTV.setText(selectPrint);
-                    printValueTV.setText(String.valueOf(printValue));
                     qytValueTV.setText(qyt);
+                    bagTV.setText(selectBag);
+                    gsmTV.setText(selectgsm);
+                    swingTV.setText(selectSwing);
+                    printTV.setText(selectPrint);
 
 
-                    double valueA =(Double.valueOf(weight)+Double.valueOf(guesset))*(Double.valueOf(height)+(Double.valueOf(guesset)/2));
-                    double valueB = (valueA+(bagValue));
-                    double valueC = valueB*2;
-                    double valueD = valueC*gsmValue;
-                    double valueE = valueD*swingValue;
-                    double valueF = valueE+printValue;
-                    double finalValue = valueF+0.60;
-                    double finalValue2 = finalValue*Double.valueOf(qyt);
-                    resultTV.setText(String.valueOf(finalValue2));
-
+                    double valueA =(Double.valueOf(width)+Double.valueOf(guesset))*(Double.valueOf(height)+(Double.valueOf(guesset)/2));
+                    double valueB = valueA*2;
+                    double valueC = valueB+bagValue;
+                    double valueD = (valueC*gsmValue);
+                    double valueE = (valueD+swingValue);
+                    double valueF = (valueE+printValue);
+                    double price = valueF+dataPojo.getProfitValue();
+                    String priceRound = df2.format(price);
+                    priceTV.setText((priceRound));
+                    double totalPrice =Double.valueOf(priceRound)*Double.valueOf(qyt);
+                    totalPriceTV.setText(String.format("%.2f",totalPrice));
 
                 }
 
@@ -207,7 +204,7 @@ public class CorporateActivity extends AppCompatActivity {
 
                 }
 
-                else if (selectgsm.equals("gsm")) {
+                else if (selectgsm.equals("40gsm")) {
                     gsmValue = dataPojo.getGsm40Value();
                     Snackbar.make(view, "" + selectgsm + "-" + gsmValue, Snackbar.LENGTH_SHORT).show();
                 }

@@ -24,10 +24,11 @@ public class DataPojo {
     double color3Value;
     double color4Value;
     double screenPrint;
+    double profitValue;
 
 
     @Ignore
-    public DataPojo(long id, double handleValue, double dcutValue, double wcutValue, double gsm40Value, double gsm50Value, double gsm60Value, double gsm70Value, double gsm80Value, double autoSealingValue, double netSwingValue, double noColorValue, double color1Value, double color2Value, double color3Value, double color4Value, double screenPrint) {
+    public DataPojo(long id, double handleValue, double dcutValue, double wcutValue, double gsm40Value, double gsm50Value, double gsm60Value, double gsm70Value, double gsm80Value, double autoSealingValue, double netSwingValue, double noColorValue, double color1Value, double color2Value, double color3Value, double color4Value, double screenPrint,double profitValue) {
         this.id = id;
         this.handleValue = handleValue;
         this.dcutValue = dcutValue;
@@ -45,9 +46,10 @@ public class DataPojo {
         this.color3Value = color3Value;
         this.color4Value = color4Value;
         this.screenPrint = screenPrint;
+        this.profitValue = profitValue;
     }
 
-    public DataPojo(double handleValue, double dcutValue, double wcutValue, double gsm40Value, double gsm50Value, double gsm60Value, double gsm70Value, double gsm80Value, double autoSealingValue, double netSwingValue, double noColorValue, double color1Value, double color2Value, double color3Value, double color4Value, double screenPrint) {
+    public DataPojo(double handleValue, double dcutValue, double wcutValue, double gsm40Value, double gsm50Value, double gsm60Value, double gsm70Value, double gsm80Value, double autoSealingValue, double netSwingValue, double noColorValue, double color1Value, double color2Value, double color3Value, double color4Value, double screenPrint,double profitValue) {
         this.handleValue = handleValue;
         this.dcutValue = dcutValue;
         this.wcutValue = wcutValue;
@@ -64,6 +66,7 @@ public class DataPojo {
         this.color3Value = color3Value;
         this.color4Value = color4Value;
         this.screenPrint = screenPrint;
+        this.profitValue = profitValue;
     }
 
 
@@ -201,5 +204,21 @@ public class DataPojo {
 
     public void setScreenPrint(double screenPrint) {
         this.screenPrint = screenPrint;
+    }
+
+    public double getDcutValue() {
+        return dcutValue;
+    }
+
+    public void setDcutValue(double dcutValue) {
+        this.dcutValue = dcutValue;
+    }
+
+    public double getProfitValue() {
+        return profitValue;
+    }
+
+    public void setProfitValue(double profitValue) {
+        this.profitValue = profitValue;
     }
 }
